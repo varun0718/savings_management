@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Savings Management</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Savings Management</h1>
+        <nav>
+            <ul>
+                <li><a href="/add_expense">Add Expense</a></li>
+                <li><a href="/add_savings">Add Savings</a></li>
+                <li><a href="/view_report">View Report</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <center><h2 style="background-color: rgb(102, 200, 239);"><br>Welcome to Savings Management<br><br></h2></center> 
+        <!--<img src="{{ url_for('static', filename='images/savings4.jpeg') }}" alt="Flowers in Chania" width="300" height="180"><br>
+        <h3>About finance icons</h3>-->
+        <style>
+            body {
+                background-image: url("{{ url_for('static', filename='images/savings1.jpeg') }}");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>            
+    </main>
+</body>
+</html>

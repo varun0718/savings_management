@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Report</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Savings Management</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/add_expense">Add Expense</a></li>
+                <li><a href="/add_savings">Add Savings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>View Report</h2>
+        <h3>Expenses:</h3>
+        <style>
+            body {
+                background-image: url("{{ url_for('static', filename='images/savings3.jpeg') }}");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        </style>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+            {% for expense in expenses %}
+            <tr>
+                <td>{{ expense['name'] }}</td>
+                <td>{{ expense['amount'] }}</td>
+                <td>{{ expense['date'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <h3>Savings:</h3>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+            {% for saving in savings %}
+            <tr>
+                <td>{{ saving['name'] }}</td>
+                <td>{{ saving['amount'] }}</td>
+                <td>{{ saving['date'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </main>
+</body>
+</html>
